@@ -1,4 +1,4 @@
-﻿# Publicação de portfólio
+# Publicação de portfólio
 
 GitHub: https://github.com/horaanjos/AnjosFlow
 Netlify: https://anjosflow-horaanjos.netlify.app
@@ -36,9 +36,9 @@ autenticação nem criado recurso de hospedagem de Back-end nesta entrega.
 A publicação inicial foi feita manualmente via Netlify CLI. Para novos deploys,
 gere o build de portfólio e, da raiz, execute:
 
-`powershell
+```powershell
 npm.cmd exec --yes --package=netlify-cli -- netlify deploy --prod --no-build --dir frontend/dist --site 99290c7f-efea-41c9-a529-ec29880080d4
-` 
+```
 
 Deploy automático a cada push ainda não está conectado; a integração Git pode
 ser ativada no painel Netlify usando o repositório público e netlify.toml.
