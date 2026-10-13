@@ -194,8 +194,7 @@ Próximas melhorias: autenticação/autorização antes de publicar, paginação
 exportação/backup, histórico detalhado de cada revisão, duração configurável das
 provas, preferências sincronizadas e otimização de carga com grandes históricos.
 
-Nenhum commit, push, publicação, volume apagado ou limpeza do banco foi realizado
-na implementação deste MVP.
+Os dados locais e volumes do PostgreSQL foram preservados durante a implementação.
 ## Versão pública de portfólio
 
 - Código: https://github.com/horaanjos/AnjosFlow

@@ -67,14 +67,14 @@ it("permite iniciar e pausar foco sem disciplina na prévia", async () => {
     </MemoryRouter>,
   );
   await user.click(
-    screen.getByRole("button", { name: "Iniciar", exact: true }),
+    screen.getByRole("button", { name: "Iniciar" }),
   );
   expect(
-    screen.getByRole("button", { name: "Pausar", exact: true }),
+    screen.getByRole("button", { name: "Pausar" }),
   ).toBeEnabled();
-  await user.click(screen.getByRole("button", { name: "Pausar", exact: true }));
+  await user.click(screen.getByRole("button", { name: "Pausar" }));
   expect(
-    screen.getByRole("button", { name: "Retomar", exact: true }),
+    screen.getByRole("button", { name: "Retomar" }),
   ).toBeEnabled();
   expect(fetch).not.toHaveBeenCalled();
 });
