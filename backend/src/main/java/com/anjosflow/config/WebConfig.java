@@ -7,18 +7,27 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-    private final String frontendOrigin;
+  private final String frontendOrigin;
 
-    public WebConfig(@Value("${app.frontend-origin}") String frontendOrigin) {
-        this.frontendOrigin = frontendOrigin;
-    }
+  public WebConfig(@Value("${app.frontend-origin}") String frontendOrigin) {
+    this.frontendOrigin = frontendOrigin;
+  }
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**")
-                .allowedOrigins(frontendOrigin)
-                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
-                .allowedHeaders("Content-Type", "Accept")
-                .maxAge(3600);
-    }
+  @Override
+  public void addCorsMappings(CorsRegistry registry) {
+    registry
+        .addMapping("/api/**")
+        .allowedOrigins(frontendOrigin, loopbackAlias())
+        .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+        .allowedHeaders("Content-Type", "Accept")
+        .maxAge(3600);
+  }
+
+  private String loopbackAlias() {
+    var origin = java.net.URI.create(frontendOrigin);
+    if (!"localhost".equals(origin.getHost())) return frontendOrigin;
+    return origin.getScheme()
+        + "://127.0.0.1"
+        + (origin.getPort() == -1 ? "" : ":" + origin.getPort());
+  }
 }
