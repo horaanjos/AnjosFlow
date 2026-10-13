@@ -30,3 +30,15 @@ npm.cmd run dev
 .env, node_modules, target, dist, .tools e .netlify estão ignorados no Git.
 Somente arquivos .env.example sem credenciais são publicados. Não foi implementada
 autenticação nem criado recurso de hospedagem de Back-end nesta entrega.
+
+## Atualizações do site
+
+A publicação inicial foi feita manualmente via Netlify CLI. Para novos deploys,
+gere o build de portfólio e, da raiz, execute:
+
+`powershell
+npm.cmd exec --yes --package=netlify-cli -- netlify deploy --prod --no-build --dir frontend/dist --site 99290c7f-efea-41c9-a529-ec29880080d4
+` 
+
+Deploy automático a cada push ainda não está conectado; a integração Git pode
+ser ativada no painel Netlify usando o repositório público e netlify.toml.

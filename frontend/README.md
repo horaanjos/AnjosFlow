@@ -24,3 +24,10 @@ Calendário e gráficos são carregados por rota para reduzir o bundle inicial.
 
 A imagem oficial foi copiada fielmente para public/anjosflow-logo.png.
 Mais informações na documentação da raiz e em docs/business-rules.md.
+## Apresentação na Netlify
+
+https://anjosflow-horaanjos.netlify.app
+
+VITE_PORTFOLIO_MODE=true ativa a apresentação pública sem chamadas à API local.
+Pomodoro e preferências são locais ao navegador; cadastros não são gravados.
+O desenvolvimento padrão continua integrado ao Back-end. Veja docs/deployment.md.

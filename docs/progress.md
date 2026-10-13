@@ -38,3 +38,20 @@ sincronizadas. Não há funcionalidades autorizadas deste MVP aguardando impleme
 Limites deliberados: provas com 1h na agenda, sessões imutáveis, metas de dois tipos,
 revisões simples e planner baseado em tarefas. Regras documentadas em business-rules.md
  e planner.md. Não há cronômetro do sistema com navegador fechado.
+## Publicação de portfólio — 13/10/2026
+
+Código completo enviado a https://github.com/horaanjos/AnjosFlow (público, branch master).
+Front-end publicado em https://anjosflow-horaanjos.netlify.app. Back-end e PostgreSQL
+não foram hospedados. Não foi implementado login de aplicação nesta etapa.
+
+26 testes do Front-end aprovados (22 existentes + 4 do modo de portfólio).
+TypeScript e build em VITE_PORTFOLIO_MODE=true aprovados. Verificação do site real
+no Edge passou: HTTP 200, rotas SPA diretas, formulário sem gravação, Pomodoro
+iniciando/pausando, planejamento sem API desabilitado, mobile sem overflow,
+zero chamadas à API/localhost e zero erros JavaScript.
+
+A Netlify inicialmente exigia login do visitante (401). A exigência foi removida
+somente neste projeto e a verificação pública passou. .env e credenciais de GitHub
+ e Netlify permaneceram fora do Git. A publicação atual é manual via CLI;
+commits futuros não disparam deploy automaticamente até conectar o repositório
+pela integração Git da Netlify. netlify.toml já contém os parâmetros para isso.
